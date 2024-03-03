@@ -1,5 +1,4 @@
 #include "MainFrame.h"
-#include "Ship.h"
 #include <wx/wx.h>
 //#include <wx/spinctrl.h>
 

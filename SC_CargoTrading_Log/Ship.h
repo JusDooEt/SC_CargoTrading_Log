@@ -1,5 +1,5 @@
 #pragma once
-#include <string>
+#include <wx/wx.h>
 
 
 enum ShipType

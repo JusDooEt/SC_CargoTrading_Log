@@ -9,7 +9,7 @@ Ship::Ship()
 
 }
 
-Ship::Ship(string name, int cargoCap, ShipType type)
+Ship::Ship(std::string name, int cargoCap, ShipType type)
 {
 	this->name = name;
 	this->cargoCap = cargoCap;
@@ -20,7 +20,7 @@ Ship::~Ship() {}
 
 
 // Mutators
-void Ship::SetName(string name)
+void Ship::SetName(std::string name)
 {
 	this->name = name;
 }
@@ -38,7 +38,7 @@ void Ship::SetType(ShipType type)
 
 
 // Accessors
-string Ship::GetName() const
+std::string Ship::GetName() const
 {
 	return name;
 }
