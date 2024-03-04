@@ -13,7 +13,7 @@ provide overall statistics like profit / minute, profit / cargoType, etc.
 
 
 
-#### Credit
+#### Credit:
 Designer: Cameron Abo
 
 Programmers: Cameron Abo, Garron Grim
