@@ -1,4 +1,5 @@
 # Star Citizen Cargo Log GUI
+## About
 The goal of this program is to practice creating GUI applications for practical purposes. This 
 application will allow users to track cargo runs in the game star citizen. It will ask for the 
 user to select the ship they are using ingame to haul cargo and their initial in-game balance. 
@@ -8,12 +9,20 @@ window that is updated accordingly. The app will also help the player manage car
 provide overall statistics like profit / minute, profit / cargoType, etc.
 
 
+
 ## Concept Design
 ![Window Design ver. 1](Images/GUIDesign-1.PNG)
 
 
 
-#### Credit:
+## Library
+### wxWidgets
+Download: [https://www.wxwidgets.org/downloads/](https://www.wxwidgets.org/downloads/)
+Install Tutorial Video: [https://www.youtube.com/watch?v=ONYW3hBbk-8&list=PLFk1_lkqT8MbVOcwEppCPfjGOGhLvcf9G&index=2](https://www.youtube.com/watch?v=ONYW3hBbk-8&list=PLFk1_lkqT8MbVOcwEppCPfjGOGhLvcf9G&index=2)
+By OttoBotCode
+
+
+## Credit:
 Designer: Cameron Abo
 
 Programmers: Cameron Abo, Garron Grim
