@@ -10,6 +10,11 @@ provide overall statistics like profit / minute, profit / cargoType, etc.
 
 
 
+## To-Do
+- [ ] Switch to imGui library
+
+
+
 ## Concept Design
 ![Window Design ver. 1](Images/GUIDesign-1.PNG)
 
@@ -20,6 +25,7 @@ Link to project done in Figma
 [https://www.figma.com/file/pglVAOtRSng9ekZc20Qi3f/SC-Trading-Log-GUI-Design-ver-1?type=design&node-id=0%3A1&mode=design&t=2e0dG0I28tio3z8e-1](https://www.figma.com/file/pglVAOtRSng9ekZc20Qi3f/SC-Trading-Log-GUI-Design-ver-1?type=design&node-id=0%3A1&mode=design&t=2e0dG0I28tio3z8e-1)
 
 
+
 ## Library
 ### wxWidgets
 Download: [https://www.wxwidgets.org/downloads/](https://www.wxwidgets.org/downloads/)
@@ -27,6 +33,7 @@ Download: [https://www.wxwidgets.org/downloads/](https://www.wxwidgets.org/downl
 Install Tutorial Video: [https://www.youtube.com/watch?v=ONYW3hBbk-8&list=PLFk1_lkqT8MbVOcwEppCPfjGOGhLvcf9G&index=2](https://www.youtube.com/watch?v=ONYW3hBbk-8&list=PLFk1_lkqT8MbVOcwEppCPfjGOGhLvcf9G&index=2)
 
 By OttoBotCode
+
 
 
 ## Credit:
