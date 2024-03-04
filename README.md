@@ -13,6 +13,8 @@ provide overall statistics like profit / minute, profit / cargoType, etc.
 ## Concept Design
 ![Window Design ver. 1](Images/GUIDesign-1.PNG)
 
+600x750 px
+
 Link to project done in Figma
 
 [https://www.figma.com/file/pglVAOtRSng9ekZc20Qi3f/SC-Trading-Log-GUI-Design-ver-1?type=design&node-id=0%3A1&mode=design&t=2e0dG0I28tio3z8e-1](https://www.figma.com/file/pglVAOtRSng9ekZc20Qi3f/SC-Trading-Log-GUI-Design-ver-1?type=design&node-id=0%3A1&mode=design&t=2e0dG0I28tio3z8e-1)
