@@ -15,9 +15,21 @@ provide overall statistics like profit / minute, profit / cargoType, etc.
 - [ ] Create Ship Select Window
   - [ ] Create a ship selection drop down menu
   - [ ] Create Ship specs text
+- [ ] Create Current Balance Text Box
+  - [ ] Update Current Balance when user buys and sells
+- [ ] Create Route timer window
+  - [ ] Add start and finish route buttons that controls the timer
 - [ ] Create Buy and Sell Window
   - [ ] Create cargo type text input
-  - [ ] Create amount text
+  - [ ] Create amount text input
+  - [ ] Create price per unit text input
+  - [ ] Create text labels for input boxes
+- [ ] Create Cargo Hold Window
+  - [ ] Log name of current cargo in ship inventory
+  - [ ] Log size of current cargo in ship inventory
+  - [ ] Log buy orders
+  - [ ] Log sell orders
+  - [ ] Log total cargo hold value
 
 
 
