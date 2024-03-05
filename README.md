@@ -12,6 +12,9 @@ provide overall statistics like profit / minute, profit / cargoType, etc.
 
 ## To-Do
 - [ ] Switch to imGui library
+- [ ] Create a ship selection drop down menu
+
+
 
 
 
