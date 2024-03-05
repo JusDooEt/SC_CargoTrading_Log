@@ -17,6 +17,7 @@ provide overall statistics like profit / minute, profit / cargoType, etc.
 
 
 
+
 ## Concept Design
 ![Window Design ver. 1](Images/GUIDesign-1.PNG)
 
