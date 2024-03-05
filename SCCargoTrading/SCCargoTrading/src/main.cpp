@@ -33,7 +33,7 @@ int main(int, char**)
     //ImGui_ImplWin32_EnableDpiAwareness();
     WNDCLASSEXW wc = { sizeof(wc), CS_CLASSDC, WndProc, 0L, 0L, GetModuleHandle(nullptr), nullptr, nullptr, nullptr, nullptr, L"ImGui Example", nullptr };
     ::RegisterClassExW(&wc);
-    HWND hwnd = ::CreateWindowW(wc.lpszClassName, L"Dear ImGui DirectX11 Example", WS_OVERLAPPEDWINDOW, 100, 100, 1280, 800, nullptr, nullptr, wc.hInstance, nullptr);
+    HWND hwnd = ::CreateWindowW(wc.lpszClassName, L"Star Citizen Cargo Logger", WS_OVERLAPPEDWINDOW, 100, 100, 1280, 800, nullptr, nullptr, wc.hInstance, nullptr);
 
     // Initialize Direct3D
     if (!CreateDeviceD3D(hwnd))
@@ -65,15 +65,17 @@ int main(int, char**)
 
     // Setup Dear ImGui style
     ImGui::StyleColorsDark();
-    //ImGui::StyleColorsLight();
+    // ImGui::StyleColorsLight();
 
     // When viewports are enabled we tweak WindowRounding/WindowBg so platform windows can look identical to regular ones.
     ImGuiStyle& style = ImGui::GetStyle();
     if (io.ConfigFlags & ImGuiConfigFlags_ViewportsEnable)
     {
-        style.WindowRounding = 0.0f;
-        style.Colors[ImGuiCol_WindowBg].w = 1.0f;
+        style.WindowRounding = 10.0f;
+        style.Colors[ImGuiCol_WindowBg] = ImVec4(0, 0, 0, 255);
     }
+
+
 
     // Setup Platform/Renderer backends
     ImGui_ImplWin32_Init(hwnd);
@@ -95,10 +97,18 @@ int main(int, char**)
     //ImFont* font = io.Fonts->AddFontFromFileTTF("c:\\Windows\\Fonts\\ArialUni.ttf", 18.0f, nullptr, io.Fonts->GetGlyphRangesJapanese());
     //IM_ASSERT(font != nullptr);
 
+    // Our Syle
+    // ImGuiStyle& winStyle = ImGui::GetStyle();
+    // winStyle.Colors[ImGuiCol_WindowBg] = ImVec4(255, 0, 0, 255);
+
+
     // Our state
     bool show_demo_window = true;
     bool show_another_window = false;
     ImVec4 clear_color = ImVec4(0.45f, 0.55f, 0.60f, 1.00f);
+    bool testbool = false;
+    int  intTest = 10;
+    float floatTest = 5.5f;
 
     // Main loop
     bool done = false;
@@ -131,6 +141,8 @@ int main(int, char**)
         ImGui_ImplWin32_NewFrame();
         ImGui::NewFrame();
 
+        /* Example Code ****************************************************************************************************
+        * 
         // 1. Show the big demo window (Most of the sample code is in ImGui::ShowDemoWindow()! You can browse its code to learn more about Dear ImGui!).
         if (show_demo_window)
             ImGui::ShowDemoWindow(&show_demo_window);
@@ -166,6 +178,37 @@ int main(int, char**)
             if (ImGui::Button("Close Me"))
                 show_another_window = false;
             ImGui::End();
+        }
+
+        *********************************************************************************************************************/
+
+        ImGui::SetNextWindowSize(ImVec2(500, 500));
+ //      ImGui::SetNextWindowPos(ImVec2(0, 0));
+        if (ImGui::Begin("Test", NULL, ImGuiWindowFlags_NoResize | ImGuiWindowFlags_NoCollapse))
+        {
+            ImGui::Checkbox("Test Bool", &testbool);
+            if (ImGui::Button("Click me!"))
+            {
+                testbool = true;
+            }
+            ImGui::Text("Int");
+            ImGui::SliderInt("##d", &intTest, 1, 25);
+            ImGui::Text("Float");
+            ImGui::SliderFloat("##dd", &floatTest, 0.1f, 15.5f);
+            ImGui::SetCursorPos(ImVec2(400, 100));
+            if (ImGui::Button("Test", ImVec2(50, 50)))
+            {
+
+            }
+        }ImGui::End();
+
+        if (testbool || intTest == 25 || floatTest == 15.5f)
+        {
+            ImGui::SetNextWindowSize(ImVec2(200, 200));
+            if (ImGui::Begin("window w"))
+            {
+
+            }ImGui::End();
         }
 
         // Rendering
