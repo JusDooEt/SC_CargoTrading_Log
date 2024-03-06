@@ -13,9 +13,11 @@ provide overall statistics like profit / minute, profit / cargoType, etc.
 ## To-Do
 - [x] Switch to imGui library
 
-- [ ] Create Ship Select Window
-  - [ ] Create a ship selection drop down menu
-  - [ ] Create Ship specs text
+- [x] Create Ship Select Window
+  - [x] Create a ship selection drop down menu
+  - [x] Create Ship specs text
+  - [ ] Make a function to allow a user to enter a custom ship and add it to ShipList.txt
+  - [ ] Make a function to delete a ship from ShipList.txt
       
 - [ ] Create Current Balance Text Box
   - [ ] Update Current Balance when user buys and sells
