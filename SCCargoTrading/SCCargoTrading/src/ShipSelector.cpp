@@ -19,8 +19,8 @@ ShipSelectWindow::~ShipSelectWindow()
 void ShipSelectWindow::BeginWindow()
 {
 	//ImGui::SetNextWindowBgAlpha(1.0f);
-	ImGui::SetNextWindowPos(ImVec2(0, 23));
-	if(ImGui::Begin("Ships", NULL, ImGuiWindowFlags_NoMove | ImGuiWindowFlags_NoDocking))
+	ImGui::SetWindowPos(ImVec2(0, 23));
+	if(ImGui::Begin("Ships", NULL, ImGuiWindowFlags_NoDocking | ImGuiWindowFlags_NoMove))
 	{
 		static ImGuiComboFlags flags = 0;
 		static int item_current_idx = 0;
