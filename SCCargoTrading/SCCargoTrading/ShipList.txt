@@ -1,24 +1,36 @@
-Crusader, C2 Hercules Starlifter
+Crusader
+C2 Hercules Starlifter
 696
-Crusader, M2 Hercules Starlifter
+Crusader
+M2 Hercules Starlifter
 522
-Crusader, Mercury Star Runner
+Crusader
+Mercury Star Runner
 114
-Drake, Caterpillar
+Drake
+Caterpillar
 576
-Drake, Caterpillar - Pirate
+Drake
+Caterpillar - Pirate
 564
-RSI, Constellation Andromeda
+RSI
+Constellation Andromeda
 96
-RSI, Constellation Taurus
+RSI
+Constellation Taurus
 174
-Drake, Cutlass Black
+Drake
+Cutlass Black
 46
-Misc, Freelancer
+Misc
+Freelancer
 66
-Misc, Freelancer MAX
+Misc
+Freelancer MAX
 120
-Misc, Hull A
+Misc
+Hull A
 64
-Misc, Hull B
+Misc
+Hull B
 384

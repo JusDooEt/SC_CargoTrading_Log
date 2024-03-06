@@ -7,7 +7,8 @@ using namespace std;
 
 struct Ship
 {
-	string name;
+	string make;
+	string model;
 	int cargoMax;
 };
 
@@ -22,6 +23,7 @@ public:
 
 
 private:
+	void ShowShipData(int id) const;
 
 	// Variable Members
 	vector <Ship> shipList;
