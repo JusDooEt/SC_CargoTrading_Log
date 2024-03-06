@@ -9,6 +9,10 @@ window that is updated accordingly. The app will also help the player manage car
 provide overall statistics like profit / minute, profit / cargoType, etc.
 
 
+## Current Build
+![Current Desgin 3/6/14 00:45](Images/CurrentBuild.PNG)
+
+
 
 ## To-Do
 - [x] Switch to imGui library
@@ -44,8 +48,6 @@ provide overall statistics like profit / minute, profit / cargoType, etc.
 
 
 
-## Current Build
-![Current Desgin 3/6/14 00:45](Images/CurrentBuild.PNG)
 ## Concept Design
 ![Window Design ver. 1](Images/GUIDesign-1.PNG)
 
