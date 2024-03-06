@@ -6757,6 +6757,7 @@ bool ImGui::Begin(const char* name, bool* p_open, ImGuiWindowFlags flags)
 
     // [DEBUG] Debug break requested by user
     if (g.DebugBreakInWindow == window->ID)
+    if (g.DebugBreakInWindow == window->ID)
         IM_DEBUG_BREAK();
 
     // Automatically disable manual moving/resizing when NoInputs is set

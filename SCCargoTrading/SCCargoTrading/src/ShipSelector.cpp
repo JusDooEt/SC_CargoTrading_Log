@@ -18,8 +18,25 @@ ShipSelectWindow::~ShipSelectWindow()
 
 void ShipSelectWindow::BeginWindow()
 {
-	if(ImGui::Begin("Ships", NULL, ImGuiWindowFlags_NoCollapse | ImGuiWindowFlags_AlwaysAutoResize))
+	//ImGui::SetNextWindowBgAlpha(1.0f);
+	ImGui::SetNextWindowPos(ImGui::GetWindowPos());
+	ImGui::SetNextWindowSize(ImVec2(784, -1), ImGuiCond_Once);
+	static ImGuiComboFlags windowFlags = ImGuiWindowFlags_NoDocking | ImGuiWindowFlags_NoMove | ImGuiWindowFlags_NoSavedSettings;
+	if(ImGui::Begin("Ships", NULL, ImGuiWindowFlags_NoDocking | ImGuiWindowFlags_NoMove | ImGuiWindowFlags_NoSavedSettings))
 	{
+		float viewPortWidth = ImGui::GetMainViewport()->Size.x;
+		float viewPortHeight = ImGui::GetMainViewport()->Size.y;
+		cout << "viewPortHeight = " << viewPortHeight << endl;
+		//auto win = ImGui::GetCurrentWindowRead();
+			// test is the window is in another viewport than the default 
+			// and so disable titlebar and resizing (the grip will be hidden, and the resizing feature via imgui will be disabled)
+		if (viewPortHeight < ImGui::GetWindowSize().y)
+			ImGui::SetWindowSize(ImVec2(ImGui::GetWindowSize().x, viewPortHeight));
+
+		if (viewPortWidth < ImGui::GetWindowSize().x)
+			ImGui::SetWindowSize(ImVec2(viewPortWidth, ImGui::GetWindowSize().y));
+
+
 		static ImGuiComboFlags flags = 0;
 		static int item_current_idx = 0;
 
@@ -38,11 +55,10 @@ void ShipSelectWindow::BeginWindow()
 					ImGui::SetItemDefaultFocus();
 			}
 			ImGui::EndCombo();
-
-			
-			//ImGui::Text("Cargo Capacity: %d", shipList[item_current_idx].cargoMax);
 		}
-		ShowShipData(item_current_idx);
+		ImGui::Text("Make: %s", shipList[item_current_idx].make.c_str());
+		ImGui::Text("Model: %s", shipList[item_current_idx].model.c_str());
+		ImGui::Text("Cargo Capacity: %d SCU", shipList[item_current_idx].cargoMax);
 	}ImGui::End();
 }
 
@@ -77,10 +93,10 @@ void ShipSelectWindow::InitializeShipList()
 
 }
 
-void ShipSelectWindow::ShowShipData(int id) const
-{
-	ImGui::Text("Make: %s", shipList[id].make.c_str());
-	ImGui::Text("Model: %s", shipList[id].model.c_str());
-	ImGui::Text("Cargo Capacity: %d SCU", shipList[id].cargoMax);
-}
+//void ShipSelectWindow::ShowShipData(int id) const
+//{
+//	ImGui::Text("Make: %s", shipList[id].make.c_str());
+//	ImGui::Text("Model: %s", shipList[id].model.c_str());
+//	ImGui::Text("Cargo Capacity: %d SCU", shipList[id].cargoMax);
+//}
 
