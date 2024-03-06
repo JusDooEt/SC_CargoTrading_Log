@@ -18,19 +18,19 @@ ShipSelectWindow::~ShipSelectWindow()
 
 void ShipSelectWindow::BeginWindow()
 {
-	if(ImGui::Begin("Ships"))
+	if(ImGui::Begin("Ships", NULL, ImGuiWindowFlags_NoCollapse | ImGuiWindowFlags_AlwaysAutoResize))
 	{
 		static ImGuiComboFlags flags = 0;
 		static int item_current_idx = 0;
 
 	
-		if (ImGui::BeginCombo("Select a ship", shipList[item_current_idx].name.c_str(), flags))
+		if (ImGui::BeginCombo("Select a ship", (shipList[item_current_idx].make + ", " + shipList[item_current_idx].model).c_str(), flags))
 		{
 			
 			for (int n = 0; n < shipCount; n++)
 			{
 				const bool is_selected = (item_current_idx == n);
-				if (ImGui::Selectable(shipList[n].name.c_str(), is_selected))
+				if (ImGui::Selectable((shipList[n].make + ", " + shipList[n].model).c_str(), is_selected))
 					item_current_idx = n;
 
 				// Set the initial focus when opening the combo (scrolling + keyboard navigation focus)
@@ -42,31 +42,33 @@ void ShipSelectWindow::BeginWindow()
 			
 			//ImGui::Text("Cargo Capacity: %d", shipList[item_current_idx].cargoMax);
 		}
-		ImGui::Text("Ship: %s", shipList[item_current_idx].name.c_str());
-		ImGui::Text("Cargo Capacity: %d", shipList[item_current_idx].cargoMax);
+		ShowShipData(item_current_idx);
 	}ImGui::End();
 }
 
 void ShipSelectWindow::InitializeShipList()
 {
 	ifstream fin;
-	string name;
+	string make;
+	string model;
 	int cargoMax;
 	Ship* ptr = NULL;
 
 
-	fin.open("ShipList.txt");
+	fin.open(shipListFile);
 	while (fin)
 	{
-		getline(fin, name);
+		getline(fin, make);
+		getline(fin, model);
 		fin >> cargoMax;
 		fin.ignore();
 		shipCount++;
 		ptr = new Ship;
+		ptr->make = make;
+		ptr->model = model;
 		ptr->cargoMax = cargoMax;
-		ptr->name = name;
-		cout << "Adding " << ptr->name << " to the ShipList\n"
-			<< "Cargo Cap = " << ptr->cargoMax << " SCU\n";
+		/*cout << "Adding " << ptr->name << " to the ShipList\n"
+			<< "Cargo Cap = " << ptr->cargoMax << " SCU\n";*/
 		shipList.push_back(*ptr);
 		ptr = NULL;
 	}
@@ -75,5 +77,10 @@ void ShipSelectWindow::InitializeShipList()
 
 }
 
-
+void ShipSelectWindow::ShowShipData(int id) const
+{
+	ImGui::Text("Make: %s", shipList[id].make.c_str());
+	ImGui::Text("Model: %s", shipList[id].model.c_str());
+	ImGui::Text("Cargo Capacity: %d", shipList[id].cargoMax);
+}
 

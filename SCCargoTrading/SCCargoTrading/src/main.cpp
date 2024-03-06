@@ -183,8 +183,8 @@ int main(int, char**)
 
         *********************************************************************************************************************/
 
-        Test::RunTest();
-        //ShipSelection = new ShipSelectWindow;
+        // Test::RunTest();
+        // ShipSelection = new ShipSelectWindow;
         ShipSelection.BeginWindow();
 
         // Rendering
