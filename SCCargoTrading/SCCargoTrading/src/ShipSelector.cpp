@@ -19,9 +19,24 @@ ShipSelectWindow::~ShipSelectWindow()
 void ShipSelectWindow::BeginWindow()
 {
 	//ImGui::SetNextWindowBgAlpha(1.0f);
-	ImGui::SetWindowPos(ImVec2(0, 23));
-	if(ImGui::Begin("Ships", NULL, ImGuiWindowFlags_NoDocking | ImGuiWindowFlags_NoMove))
+	ImGui::SetNextWindowPos(ImGui::GetWindowPos());
+	ImGui::SetNextWindowSize(ImVec2(784, -1), ImGuiCond_Once);
+	static ImGuiComboFlags windowFlags = ImGuiWindowFlags_NoDocking | ImGuiWindowFlags_NoMove | ImGuiWindowFlags_NoSavedSettings;
+	if(ImGui::Begin("Ships", NULL, ImGuiWindowFlags_NoDocking | ImGuiWindowFlags_NoMove | ImGuiWindowFlags_NoSavedSettings))
 	{
+		float viewPortWidth = ImGui::GetMainViewport()->Size.x;
+		float viewPortHeight = ImGui::GetMainViewport()->Size.y;
+		cout << "viewPortHeight = " << viewPortHeight << endl;
+		//auto win = ImGui::GetCurrentWindowRead();
+			// test is the window is in another viewport than the default 
+			// and so disable titlebar and resizing (the grip will be hidden, and the resizing feature via imgui will be disabled)
+		if (viewPortHeight < ImGui::GetWindowSize().y)
+			ImGui::SetWindowSize(ImVec2(ImGui::GetWindowSize().x, viewPortHeight));
+
+		if (viewPortWidth < ImGui::GetWindowSize().x)
+			ImGui::SetWindowSize(ImVec2(viewPortWidth, ImGui::GetWindowSize().y));
+
+
 		static ImGuiComboFlags flags = 0;
 		static int item_current_idx = 0;
 

@@ -35,7 +35,8 @@ int main(int, char**)
     //ImGui_ImplWin32_EnableDpiAwareness();
     WNDCLASSEXW wc = { sizeof(wc), CS_CLASSDC, WndProc, 0L, 0L, GetModuleHandle(nullptr), nullptr, nullptr, nullptr, nullptr, L"ImGui Example", nullptr };
     ::RegisterClassExW(&wc);
-    HWND hwnd = ::CreateWindowW(wc.lpszClassName, L"Star Citizen Cargo Logger", WS_OVERLAPPEDWINDOW, 100, 100, 1280, 800, nullptr, nullptr, wc.hInstance, nullptr);
+    HWND hwnd = ::CreateWindowW(wc.lpszClassName, L"Star Citizen Cargo Logger", WS_OVERLAPPEDWINDOW, 100, 100, 800
+        , 800, nullptr, nullptr, wc.hInstance, nullptr);
 
     // Initialize Direct3D
     if (!CreateDeviceD3D(hwnd))
@@ -46,7 +47,7 @@ int main(int, char**)
     }
 
     // Show the window
-    ::ShowWindow(hwnd, SW_SHOWMAXIMIZED);
+    ::ShowWindow(hwnd, SW_SHOW);
     ::UpdateWindow(hwnd);
 
     // Setup Dear ImGui context
@@ -144,7 +145,7 @@ int main(int, char**)
 
 
         // 1. Show the big demo window (Most of the sample code is in ImGui::ShowDemoWindow()! You can browse its code to learn more about Dear ImGui!).
- /*       if (show_demo_window)
+        /*if (show_demo_window)
             ImGui::ShowDemoWindow(&show_demo_window);*/
 
         //// 2. Show a simple window that we create ourselves. We use a Begin/End pair to create a named window.
