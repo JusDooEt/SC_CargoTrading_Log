@@ -22,8 +22,6 @@ public:
 
 
 private:
-	
-	//void CountShipList();
 
 	// Variable Members
 	vector <Ship> shipList;

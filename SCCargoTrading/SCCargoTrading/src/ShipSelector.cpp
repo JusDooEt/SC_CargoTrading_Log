@@ -6,6 +6,7 @@ ShipSelectWindow::ShipSelectWindow()
 	//shipNames = NULL;
 	shipListFile = "ShipList.txt";
 	shipCount = 0;
+	InitializeShipList();
 }
 
 ShipSelectWindow::~ShipSelectWindow()
@@ -22,20 +23,14 @@ void ShipSelectWindow::BeginWindow()
 		static ImGuiComboFlags flags = 0;
 		static int item_current_idx = 0;
 
-		string shipsNames[] = { "Crusader, C2 Hercules Starlifter",
-								"Crusader, M2 Hercules Starlifter",
-								"Crusader, Mercury Star Runner",
-								"Drake, Caterpillar",
-								"RSI, Constellation Andromeda" };
-		//const char* nameList[] = shipsNames.data();
 	
-		if (ImGui::BeginCombo("combo 1", shipsNames[item_current_idx].c_str(), flags))
+		if (ImGui::BeginCombo("Select a ship", shipList[item_current_idx].name.c_str(), flags))
 		{
 			
-			for (int n = 0; n < IM_ARRAYSIZE(shipsNames); n++)
+			for (int n = 0; n < shipCount; n++)
 			{
 				const bool is_selected = (item_current_idx == n);
-				if (ImGui::Selectable(shipsNames[n].c_str(), is_selected))
+				if (ImGui::Selectable(shipList[n].name.c_str(), is_selected))
 					item_current_idx = n;
 
 				// Set the initial focus when opening the combo (scrolling + keyboard navigation focus)
@@ -47,7 +42,8 @@ void ShipSelectWindow::BeginWindow()
 			
 			//ImGui::Text("Cargo Capacity: %d", shipList[item_current_idx].cargoMax);
 		}
-		ImGui::Text("Ship: %s", shipsNames[item_current_idx].c_str());
+		ImGui::Text("Ship: %s", shipList[item_current_idx].name.c_str());
+		ImGui::Text("Cargo Capacity: %d", shipList[item_current_idx].cargoMax);
 	}ImGui::End();
 }
 
@@ -60,13 +56,12 @@ void ShipSelectWindow::InitializeShipList()
 
 
 	fin.open("ShipList.txt");
-	
-	//shipNames = new char[]
 	while (fin)
 	{
 		getline(fin, name);
 		fin >> cargoMax;
 		fin.ignore();
+		shipCount++;
 		ptr = new Ship;
 		ptr->cargoMax = cargoMax;
 		ptr->name = name;
@@ -76,30 +71,9 @@ void ShipSelectWindow::InitializeShipList()
 		ptr = NULL;
 	}
 	
-
 	fin.close();
+
 }
 
-//void ShipSelectWindow::CountShipList()
-//{
-//	ifstream fin;
-//	fin.open("ShipList.txt");
-//
-////	shipCount = 0;
-//	int input;
-//	string strInput;
-//	while (fin)
-//	{
-//		getline(fin, strInput);
-//		if(fin >> input)
-//		{
-//			shipCount++;
-//			cout << "Ship found" << shipCount << endl;
-//		}
-//		fin.ignore();
-//	}
-//	//cout << "shipCount = " << shipCount;
-//
-//	fin.close();
-//}
+
 

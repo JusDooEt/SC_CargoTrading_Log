@@ -109,7 +109,7 @@ int main(int, char**)
     bool show_another_window = false;
     ImVec4 clear_color = ImVec4(0.45f, 0.55f, 0.60f, 1.00f);
     ShipSelectWindow ShipSelection;
-    ShipSelection.InitializeShipList();
+    // ShipSelection.InitializeShipList();
 
     // Main loop
     bool done = false;
