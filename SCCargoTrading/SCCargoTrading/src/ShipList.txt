@@ -1,0 +1,24 @@
+Crusader, C2 Hercules Starlifter
+696
+Crusader, M2 Hercules Starlifter
+522
+Crusader, Mercury Star Runner
+114
+Drake, Caterpillar
+576
+Drake, Caterpillar - Pirate
+564
+RSI, Constellation Andromeda
+96
+RSI, Constellation Taurus
+174
+Drake, Cutlass Black
+46
+Misc, Freelancer
+66
+Misc, Freelancer MAX
+120
+Misc, Hull A
+64
+Misc, Hull B
+384

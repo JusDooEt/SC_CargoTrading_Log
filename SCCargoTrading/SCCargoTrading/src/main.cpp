@@ -9,6 +9,8 @@
 #include "imgui.h"
 #include "imgui_impl_win32.h"
 #include "imgui_impl_dx11.h"
+#include "Test.h"
+#include "ShipSelector.h"
 #include <d3d11.h>
 #include <tchar.h>
 
@@ -106,9 +108,8 @@ int main(int, char**)
     bool show_demo_window = true;
     bool show_another_window = false;
     ImVec4 clear_color = ImVec4(0.45f, 0.55f, 0.60f, 1.00f);
-    bool testbool = false;
-    int  intTest = 10;
-    float floatTest = 5.5f;
+    ShipSelectWindow ShipSelection;
+    ShipSelection.InitializeShipList();
 
     // Main loop
     bool done = false;
@@ -182,34 +183,9 @@ int main(int, char**)
 
         *********************************************************************************************************************/
 
-        ImGui::SetNextWindowSize(ImVec2(500, 500));
- //      ImGui::SetNextWindowPos(ImVec2(0, 0));
-        if (ImGui::Begin("Test", NULL, ImGuiWindowFlags_NoResize | ImGuiWindowFlags_NoCollapse))
-        {
-            ImGui::Checkbox("Test Bool", &testbool);
-            if (ImGui::Button("Click me!"))
-            {
-                testbool = true;
-            }
-            ImGui::Text("Int");
-            ImGui::SliderInt("##d", &intTest, 1, 25);
-            ImGui::Text("Float");
-            ImGui::SliderFloat("##dd", &floatTest, 0.1f, 15.5f);
-            ImGui::SetCursorPos(ImVec2(400, 100));
-            if (ImGui::Button("Test", ImVec2(50, 50)))
-            {
-
-            }
-        }ImGui::End();
-
-        if (testbool || intTest == 25 || floatTest == 15.5f)
-        {
-            ImGui::SetNextWindowSize(ImVec2(200, 200));
-            if (ImGui::Begin("window w"))
-            {
-
-            }ImGui::End();
-        }
+        Test::RunTest();
+        //ShipSelection = new ShipSelectWindow;
+        ShipSelection.BeginWindow();
 
         // Rendering
         ImGui::Render();
@@ -233,6 +209,8 @@ int main(int, char**)
     ImGui_ImplDX11_Shutdown();
     ImGui_ImplWin32_Shutdown();
     ImGui::DestroyContext();
+    //delete(ShipSelection);
+    //ShipSelection = NULL;
 
     CleanupDeviceD3D();
     ::DestroyWindow(hwnd);
