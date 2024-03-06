@@ -18,6 +18,9 @@ provide overall statistics like profit / minute, profit / cargoType, etc.
   - [x] Create Ship specs text
   - [ ] Make a function to allow a user to enter a custom ship and add it to ShipList.txt
   - [ ] Make a function to delete a ship from ShipList.txt
+  - [ ] Add sorting functions
+    - [ ] Alphabetically Sort
+    - [ ] Sort by cargo capacity
       
 - [ ] Create Current Balance Text Box
   - [ ] Update Current Balance when user buys and sells
