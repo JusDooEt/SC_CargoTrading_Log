@@ -81,6 +81,6 @@ void ShipSelectWindow::ShowShipData(int id) const
 {
 	ImGui::Text("Make: %s", shipList[id].make.c_str());
 	ImGui::Text("Model: %s", shipList[id].model.c_str());
-	ImGui::Text("Cargo Capacity: %d", shipList[id].cargoMax);
+	ImGui::Text("Cargo Capacity: %d SCU", shipList[id].cargoMax);
 }
 
