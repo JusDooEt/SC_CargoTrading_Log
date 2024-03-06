@@ -23,7 +23,7 @@ public:
 
 
 private:
-	void ShowShipData(int id) const;
+	//void ShowShipData(int id) const;
 
 	// Variable Members
 	vector <Ship> shipList;

@@ -12,7 +12,7 @@ namespace Test
 	void RunTest()
 	{
 
-        ImGui::SetNextWindowSize(ImVec2(500, 500));
+        //ImGui::SetNextWindowPos()
         //      ImGui::SetNextWindowPos(ImVec2(0, 0));
         if (ImGui::Begin("Test", NULL, ImGuiWindowFlags_NoResize | ImGuiWindowFlags_NoCollapse))
         {

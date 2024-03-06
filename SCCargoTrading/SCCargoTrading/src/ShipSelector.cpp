@@ -18,7 +18,9 @@ ShipSelectWindow::~ShipSelectWindow()
 
 void ShipSelectWindow::BeginWindow()
 {
-	if(ImGui::Begin("Ships", NULL, ImGuiWindowFlags_NoCollapse | ImGuiWindowFlags_AlwaysAutoResize))
+	//ImGui::SetNextWindowBgAlpha(1.0f);
+	ImGui::SetNextWindowPos(ImVec2(0, 23));
+	if(ImGui::Begin("Ships", NULL, ImGuiWindowFlags_NoMove | ImGuiWindowFlags_NoDocking))
 	{
 		static ImGuiComboFlags flags = 0;
 		static int item_current_idx = 0;
@@ -38,11 +40,10 @@ void ShipSelectWindow::BeginWindow()
 					ImGui::SetItemDefaultFocus();
 			}
 			ImGui::EndCombo();
-
-			
-			//ImGui::Text("Cargo Capacity: %d", shipList[item_current_idx].cargoMax);
 		}
-		ShowShipData(item_current_idx);
+		ImGui::Text("Make: %s", shipList[item_current_idx].make.c_str());
+		ImGui::Text("Model: %s", shipList[item_current_idx].model.c_str());
+		ImGui::Text("Cargo Capacity: %d SCU", shipList[item_current_idx].cargoMax);
 	}ImGui::End();
 }
 
@@ -77,10 +78,10 @@ void ShipSelectWindow::InitializeShipList()
 
 }
 
-void ShipSelectWindow::ShowShipData(int id) const
-{
-	ImGui::Text("Make: %s", shipList[id].make.c_str());
-	ImGui::Text("Model: %s", shipList[id].model.c_str());
-	ImGui::Text("Cargo Capacity: %d SCU", shipList[id].cargoMax);
-}
+//void ShipSelectWindow::ShowShipData(int id) const
+//{
+//	ImGui::Text("Make: %s", shipList[id].make.c_str());
+//	ImGui::Text("Model: %s", shipList[id].model.c_str());
+//	ImGui::Text("Cargo Capacity: %d SCU", shipList[id].cargoMax);
+//}
 
