@@ -44,7 +44,8 @@ provide overall statistics like profit / minute, profit / cargoType, etc.
 
 
 
-
+## Current Build Desgin
+![Current Desgin 3/6/14 00:45](Images/CurrentBuild.PNG)
 ## Concept Design
 ![Window Design ver. 1](Images/GUIDesign-1.PNG)
 
