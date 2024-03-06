@@ -20,8 +20,8 @@ provide overall statistics like profit / minute, profit / cargoType, etc.
 - [x] Create Ship Select Window
   - [x] Create a ship selection drop down menu
   - [x] Create Ship specs text
-  - [x] Create Function to import ships and stats from txt file
-    - [ ] Create individual txt files for specific ships
+    - [x] Create Function to import ships and stats from txt file
+      - [ ] Create individual txt files for specific ships
   - [ ] Make a function to allow a user to enter a custom ship and add it to ShipList.txt
   - [ ] Make a function to delete a ship from ShipList.txt
   - [ ] Add sorting functions
