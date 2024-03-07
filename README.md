@@ -62,10 +62,9 @@ Link to project done in Figma
 
 
 ## Library
-### wxWidgets
-Download: [https://www.wxwidgets.org/downloads/](https://www.wxwidgets.org/downloads/)
+### ImGui
+Download: [https://github.com/ocornut/imgui](https://github.com/ocornut/imgui)
 
-Install Tutorial Video: [https://www.youtube.com/watch?v=ONYW3hBbk-8&list=PLFk1_lkqT8MbVOcwEppCPfjGOGhLvcf9G&index=2](https://www.youtube.com/watch?v=ONYW3hBbk-8&list=PLFk1_lkqT8MbVOcwEppCPfjGOGhLvcf9G&index=2)
 
 By OttoBotCode
 
