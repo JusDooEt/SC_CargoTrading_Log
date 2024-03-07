@@ -66,9 +66,6 @@ Link to project done in Figma
 Download: [https://github.com/ocornut/imgui](https://github.com/ocornut/imgui)
 
 
-By OttoBotCode
-
-
 
 ## Credit:
 Designer: Cameron Abo
