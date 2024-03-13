@@ -1,0 +1,3 @@
+[submodule "SC-Cargo-Log"]
+	path = SC-Cargo-Log
+	url = https://github.com/JusDooEt/SC-Cargo-Log
